@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: plain.bst
+<<<<<<< HEAD
+Illegal, another \bibstyle command---line 207 of file manuscript.aux
+=======
+Illegal, another \bibstyle command---line 204 of file manuscript.aux
+>>>>>>> 943a6de80e677bd298e72e5d3944d545d3766414
+ : \bibstyle
+ :          {unsrt}
+I'm skipping whatever remains of this command
+Database file #1: sample.bib
+Warning--to sort, need author or key in twitter
+Warning--to sort, need author or key in Folder
+Warning--to sort, need author or key in Nowzad
+You've used 21 entries,
+            2118 wiz_defined-function locations,
+            613 strings with 6994 characters,
+and the built_in function-call counts, 5753 in all, are:
+= -- 538
+> -- 258
+< -- 2
++ -- 108
+- -- 84
+* -- 357
+:= -- 964
+add.period$ -- 58
+call.type$ -- 21
+change.case$ -- 91
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 238
+empty$ -- 497
+format.name$ -- 84
+if$ -- 1205
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 28
+newline$ -- 102
+num.names$ -- 36
+pop$ -- 145
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 159
+stack$ -- 0
+substring$ -- 268
+swap$ -- 31
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 3
+while$ -- 51
+width$ -- 23
+write$ -- 207
+(There was 1 error message)
