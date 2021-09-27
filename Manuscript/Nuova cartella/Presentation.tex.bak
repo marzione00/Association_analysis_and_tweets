@@ -1,0 +1,84 @@
+\documentclass[compress]{beamer}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle = {Money and Empires: a macroeconomic perspective about the collapse of complex societies}, % <-- Missing in PDF
+    pdfauthor = {Marzio De Corato and Giulia Hadjiandrea},
+    pdfsubject = {Macroeconomic project}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\author{Marzio De Corato}
+\usepackage{varwidth}
+\usepackage{beamerthemesplit} 
+\usepackage{xcolor}
+
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+
+\usepackage[english]{babel}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+
+\useoutertheme{miniframes}
+\DeclareUnicodeCharacter{200A}{!!!FIX ME!!!} 
+
+\usetheme[progressbar=frametitle]{Madrid}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[default]
+\usecolortheme{beaver}
+
+
+%Information to be included in the title page:
+
+
+\title[DID - COVID19]{}
+
+\author{Marzio De Corato e Giulia Hadjiandrea}
+\date{}
+
+\title{DID for COVID19 impact estimation}
+
+\setbeamertemplate{enumerate items}[default]
+\usecolortheme{beaver}
+
+\begin{document}
+
+
+\frame{\titlepage}
+
+\usebackgroundtemplate{ } 
+
+%\author{Marzio De Corato}
+
+\section{Intro}
+
+
+\begin{frame}
+\frametitle{Pre-Trend Check for performing DID}
+\begin{itemize}
+\item T Variabile temporale: n numero di mesi prima di Febbraio (ultimo mese senza lock-down)
+\item $T1$,$T2$ e $T3$ dummy per i 3 livelli di lockdown: T1 per Marzo e Maggio \textcolor{orange}{MEDIUM}, T2 Aprile  \textcolor{red}{HIGH} e T3 Giugno \textcolor{ao(english)}{LOW}. Nei grafici questo periodo è segnato dalle barre tratteggiate.
+\item $Y_{x}$ volume di vendite per il settore x 
+\item I dati sono stati raccolti dal sito ISTAT e destagionalizzati con il pacchetto R \textit{Forecasting: Principles and Practice - ffp} 
+\end{itemize}
+\begin{equation}
+Y_{x}-Y_{Alimentare}=\alpha+\delta_{before T1}T+\delta_{T1}T_{1}+\delta_{T2}T_{2}+\delta_{T3}T_{3}+\epsilon
+\end{equation}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{References}
+\printbibliography
+\end{frame}
+
+
+
+
+
+
+
+\end{document}

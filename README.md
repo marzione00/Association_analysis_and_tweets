@@ -1,2 +1,6 @@
 # Association_analysis_and_tweets
 Project for the course Algorithms for massive datasets (DSE)
+
+Martina Corsini and Marzio De Corato
+
+The aim of this research is to perform an association analysis on several textual datasets, each of which is made up of tweets that contain a specific hashtag, so to understand which words or groups of words are linked with the hashtag itself and the relevance of these connections. The datasets are extracted from Twitter exploiting the Twitter APIs, that make it possible to access public Tweets by searching for specific hashtags.  After a pre-processing phase of data clean-up, in which all characters are converted to lowercase and stop words and punctuation marks are removed, and tokenization,  two algorithm, implemented in Spark \cite{zaharia2016apache}  and MLxtend \cite{raschka2018mlxtend} , are used in order to reach the goal, the FP-growth and the A-priori algorithms. Depending on the technicality and specificity levels of the hashtags used to retrieve the dataset, the words and the groups of words associated to a dataset can belong to only one or several fields. Such behaviour is well-captured by the shape of the associated support distribution: therefore, it could be possible to use this characteristic to gain a first assessment of the quality of information retrieved with a particular hashtag.
