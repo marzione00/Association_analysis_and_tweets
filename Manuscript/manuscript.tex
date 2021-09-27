@@ -459,7 +459,7 @@ Twitter and other social media platforms represent an important and updated sour
 
 \section{Choice of the dataset}
 
-We chose to work on five datasets composed of 10000 tweets that contain respectively the following hashtag: \textit{freedom, Afghanistan, rare earth, Covid-19 and Pfizer}.  The ratio behind the choice of the hashtag has been to have tweeted with several levels of specificity and technicality, and concerning different topical questions, in particular the Afghanistan crisis and the pandemic situation. The hashtag \textit{freedom} is a generic hashtag that can be linked both with the rise to power of the Taliban regime and with the possibility to make vaccination compulsory.  \textit{delta}, \textit{Pfizer} and \textit{vaccines} are related to the pandemic,  but they show a different level of technicality, since vaccines is a common word while the others two refer to a more technical field, even if they have become very popular in the public debate.  \textit{Afghanistan} and \textit{rare earth } refer to the Afghanistan situation: in this case, the latter shows a high level of specificity since it is about an issue that is not widely known, namely the interest of some countries to exploit Afghanistan’s rare earth metals, some crucial elements in modern technology.
+We chose to work on five datasets composed of 10000 tweets that contain respectively the following hashtag: \textit{freedom, Afghanistan, rare earth, Covid-19 and Pfizer}. The datasets have been retrieved in the days between August 26th 2021 and August 28th 2021. The ratio behind the choice of the hashtag has been to have tweeted with several levels of specificity and technicality, and concerning different topical questions, in particular the Afghanistan crisis and the pandemic situation. The hashtag \textit{freedom} is a generic hashtag that can be linked both with the rise to power of the Taliban regime and with the possibility to make vaccination compulsory.  \textit{delta}, \textit{Pfizer} and \textit{vaccines} are related to the pandemic,  but they show a different level of technicality, since vaccines is a common word while the others two refer to a more technical field, even if they have become very popular in the public debate.  \textit{Afghanistan} and \textit{rare earth } refer to the Afghanistan situation: in this case, the latter shows a high level of specificity since it is about an issue that is not widely known, namely the interest of some countries to exploit Afghanistan’s rare earth metals, some crucial elements in modern technology.
 
 
 \chapter{Results and discussion}
@@ -468,13 +468,13 @@ We chose to work on five datasets composed of 10000 tweets that contain respecti
 For each term, we conducted a preliminary analysis on its cleaned document-term matrix: as it is possible to point out from Fig. \ref{Matrix_ALL}, a sparse matrix was obtained, as expected,  for each hashtag.  We then applied the FP-growth algorithm,  as implemented in Spark suite of codes \cite{zaharia2016apache} ,  and the A-priori algorithm,  as implemented in MLxtend suite of codes \cite{raschka2018mlxtend}. With the first one, we retrieved the frequency for each itemset,  the association rule for each basket, and the predictions of the items that are most likely to appear given a basket.  A support threshold equal to 0.03 was chosen. A preview of the results is given in the Tab. \ref{POP_RareEarth}, \ref{POP_Afghanistan}, \ref{POP_Delta}, \ref{POP_Pfizer},\ref{POP_Vaccines} and \ref{POP_Freedom}  for the 5 most popular items, while the associations (the five with the higher lifts) are given in \ref{ASS_RareEarth}, \ref{ASS_Afghanistan}, \ref{ASS_Delta}, \ref{ASS_Pfizer} and \ref{ASS_Vaccine} (note that the table for hashtag freedom is not present since there is no association with a support equal to 0.03). It is worth noting that in the pre-processing phase the hashtag was removed, thus the singleton represents, in this perspective, a binary combination between the word of the hashtag and the singleton itself. For this reason, in our analysis we will consider as multiple association a combination of two or more words, since the hashtag is implicitly included in the association. The full results (in the form of an Excel table) obtained for each hashtag are provided here \cite{Folder},  and a good visual representation of them is provided in Fig. \ref{Support distribution_ALL} and Fig. \ref{WordCloud_ALL}.  Let us start from the Rare earth hashtag, that present a large number of high frequency peaks given by the words \textit{minerals, china, Afghanistan, metals} and \textit{taliban} (see Tab. \ref{POP_RareEarth}): the presence of the words China, Afghanistan and talibans is associated with this hashtag due to the interest of some countries, such as China, to exploit Afghanistan’s rare earth metals. Furthermore, also the multiple association table Tab. \ref{POP_RareEarth}, in which we see a high lift value for the association \textit{lithium} and \textit{copper}, provide interesting informations: in fact, this association is due to the fact that these two metals are largely present in Afghanistan together with rare earth \footnote{The reader must be aware that lithium and copper are not rare-earth. A full discussion about the chemistry and the industrial uses of these materials can be found into a general chemistry textbook such as \cite{petrucci2010general}}. In the case of the Afghanistan hashtag, we have a support distribution with a very sharp peak connected to \textit{Taliban} and \textit{Kabul}: while the first one is connected because it is the Afghanistan capital (see Tab. \ref{POP_Afghanistan}), the second one is an effect of Taliban conquer of Afghanistan happened at the end of August 2021, after US troops withdraw. The importance of the US in the political scenario of the Afghanistan is also captured by the words \textit{us}, \textit{biden}, while the association between Afghanistan and \textit{kabulairport} is given both by the importance of this place for the evacuation of the US troops and by the terroristic attack that took place during the evacuation. These words and their associations provide the first peak and the second broader one. Looking to the multiple associations table (Tab. \ref{ASS_Afghanistan}), we can see that the association with larger lift is given by \textit{nowazd} and \textit{usarmy}; this connection is due to the Nowzad Dogs charity, whose supporters provided financial support for the evacuation of the association staff and their animals \cite{Nowzad}. The following association are basically connected with the capture of Kabul by Taliban and the civilian evacuation. Concerning the hashtag delta, we can see that we have an overall sharp peak made firstly by the words \textit{covid19},\textit{covid}, \textit{variant}, \textit{amp} and \textit{vaccine} (see Tab. \ref{POP_Delta}). This findings clearly signal the extensive use of word delta within the pandemic framework, while other fields in which this word appears, such as, for instance, the delta airlines, does not contribute to the spread of this hashtag in the social media. An inspection of the multiple associations between the word delta and other words, reported in Tab \ref{ASS_Delta}, highlights the words \textit{vaccine}, \textit{covid19} and \textit{variant}: however, in contrast to the previous case (hashtag Afghanistan), we can note that the maximum lift is very close to 1, thus the interest of these associations is poor. Moving to the hashtag pfizer, we see that we have a very sharp peak connected with the term \textit{vaccine}, followed by \textit{covid19}, \textit{fda} (food and drug administration) and by the association \textit{covid19,vaccine}. In this case, as we can note looking to Tab \ref{ASS_Pfizer}, we have an interesting lift value for \textit{full,vaccine}: this is the effect of the public debate about the vaccination campaign, also connected with the discussion on the possibility of a third dose, as one can see from the lift value of the association \textit{full, approval}. Concerning the hashtag vaccines, we point out the presence of large peak at the origin connected with the word \textit{covid19}, followed by \textit{covid} and \textit{amp}. With regards to the multiple association, we can see that these has a lift value close to 1. Finally, the distribution connected with freedom is almost horizontal, highlighting that this hashtag is associated with several fields, and therefore a low information content can be retrieved with it. The lack of interesting associations is also captured by the fact that no multiple association with a support equal or larger with respect to 0.03 is present, thus in this case not table is provided. In order to quantify this contrast, we propose to evaluate the area under the curve (remembering that the curves here reported referring only to the itemsets whose support is larger to the chosen threshold): the idea is that if this area is lower, the specificity of the hashtag searched is very low; on the contrary, if the area is high we have a fine specificity (i.e. only a few words are usually combined with a hashtag with the high area). From an information theory point of view, the first case corresponds to a large entropy (every state is equally probable), the second one to low entropy (few probable states). The results of this evaluation for the hashtag here considered is provided in Tab. \ref{TAB_area}: the RareEarth is associated with the higher value, followed by Afghanistan and Pfizer; on the other side, freedom has low specificity since it can be associated with a cumbersome amount of words. In the author's view, the area can be considered as an assessment of the information content obtained by mining tweets with this word: if a word with a high area (above the support threshold) is used, it is associated almost with specific terms. Thus the tweets retrieved used with this hashtag were will more likely to provide useful information. On the other side, a hashtag connected with a low area will provide many spurious tweets, and thus, in the end, no useful information will be retrieved.
 
 
-\begin{figure}[ht] 
+\begin{figure}[ht]
 \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/Matrix_rareearth.jpg} 
-    \subcaption{rareearth} 
+    \includegraphics[width=.9\linewidth]{Figures/Matrix_rareearth.jpg}
+    \subcaption{rareearth}
     \vspace{4ex}
-  \end{minipage} 
+  \end{minipage}
 \begin{minipage}[b]{0.5\linewidth}
 =======
 For each term, we conducted a preliminary analysis on its cleaned document-term matrix: as it is possible to point out from Fig. \ref{Matrix_ALL}, a sparse matrix was obtained, as expected,  for each hashtag.  We then applied the FP-growth algorithm,  as implemented in Spark suite of codes \cite{zaharia2016apache} ,  and the A-priori algorithm,  as implemented in MLxtend suite of codes \cite{raschka2018mlxtend}. With the first one, we retrieved the frequency for each itemset,  the association rule for each basket, and the predictions of the items that are most likely to appear given a basket.  A support threshold equal to 0.03 was chosen. A preview of the results is given in the Tab. \ref{POP_RareEarth}, \ref{POP_Afghanistan}, \ref{POP_Delta}, \ref{POP_Pfizer},\ref{POP_Vaccines} and \ref{POP_Freedom}  for the 5 most popular items, while the associations (the five with the higher lifts) are given in \ref{ASS_RareEarth}, \ref{ASS_Afghanistan}, \ref{ASS_Delta}, \ref{ASS_Pfizer} and \ref{ASS_Vaccine} (note that the table for hashtag freedom is not present since there is no association with a support equal to 0.03). It is worth noting that in the pre-processing phase the hashtag was removed, thus the singleton represents, in this perspective, a binary combination between the word of the hashtag and the singleton itself. For this reason, in our analysis we will consider as multiple association a combination of two or more words, since the hashtag is implicitly included in the association. The full results (in the form of an Excel table) obtained for each hashtag are provided here \cite{Folder},  and a good visual representation of them is provided in Fig. \ref{Support distribution_ALL} and Fig. \ref{WordCloud_ALL}.  Let us start from the Rare earth hashtag, that present a large number of high frequency peaks given by the words \textit{minerals, china, Afghanistan, metals} and \textit{taliban} (see Tab. \ref{POP_RareEarth}): the presence of the words China, Afghanistan and talibans are associated with this hashtag due to the interest of some countries, such as China, to exploit Afghanistan’s rare earth metals. Furthermore, also the multiple association table Tab. \ref{POP_RareEarth}, in which we see a high lift value for the association \textit{lithium} and \textit{copper}, provide intersting information: in fact, this association is due to the fact that these two metals are largely present in Afghanistan together with rare earth \footnote{The reader must be aware that lithium and copper are not rare-earth. A full discussion about the chemistry and the industrial uses of these materials can be found into a general chemistry textbook such as \cite{petrucci2010general}}. In the case of the Afghanistan hashtag, we have a support distribution with a very sharp peak connected to \textit{Taliban} and \textit{Kabul}: while the first one is connected because it is the Afghanistan capital (see Tab. \ref{POP_Afghanistan}), the second one is an effect of Taliban conquer of Afghanistan happened at the end of August 2021, after US troops withdraw. The importance of the US in the political scenario of the Afghanistan is also captured by the words \textit{us}, \textit{biden}, while the association between Afghanistan and \textit{kabulairport} is given both by the importance of this place for the evacuation of the US troops and by the terroristic attack that took place during the evacuation. These words and their associations provide the first peak and the second broader one. Looking to the multiple associations table (Tab. \ref{ASS_Afghanistan}), we can see that the association with larger lift is given by \textit{nowazd} and \textit{usarmy}; this connection is due to the Nowzad Dogs charity, whose supporters provided financial support for the evacuation of the association staff and their animals \cite{Nowzad}. The following association are basically connected with the capture of Kabul by Taliban and the civilian evacuation. Concerning the hashtag delta, we can see that we have an overall sharp peak made firstly by the words \textit{covid19},\textit{covid}, \textit{variant}, \textit{amp} and \textit{vaccine} (see Tab. \ref{POP_Delta}). This findings clearly signal the extensive use of word delta within the pandemic framework, while other fields in which this word appears, such as, for instance, the delta airlines, does not contribute to the spread of this hashtag in the social media. An inspection of the multiple associations between the word delta and other words, reported in Tab \ref{ASS_Delta}, highlights the words \textit{vaccine}, \textit{covid19} and \textit{variant}: however, in contrast to the previous case (hashtag Afghanistan), we can note that the maximum lift is very close to 1, thus the interest of these associations is poor. Moving to the hashtag pfizer, we see that we have a very sharp peak connected with the term \textit{vaccine}, followed by \textit{covid19}, \textit{fda} (food and drug administration) and by the association \textit{covid19,vaccine}. In this case, as we can note looking to Tab \ref{ASS_Pfizer}, we have an interesting lift value for \textit{full,vaccine}: this is the effect of the public debate about the vaccination campaign, also connected with the discussion on the possibility of a third dose, as one can see from the lift value of the association \textit{full, approval}. Concerning the hashtag vaccines, we point out the presence of large peak at the origin connected with the word \textit{covid19}, followed by \textit{covid} and \textit{amp}. With regards to the multiple association, we can see that these has a lift value close to 1. Finally, the distribution connected with freedom is almost horizontal, highlighting that this hashtag is associated with several fields, and therefore a low information content can be retrieved with it. The lack of interesting associations is also captured by the fact that no multiple association with a support equal or larger with respect to 0.03 is present, thus in this case not table is provided. In order to quantify this contrast, we propose to evaluate the area under the curve (remembering that the curves here reported referring only to the itemsets whose support is larger to the chosen threshold): the idea is that if this area is lower, the specificity of the hashtag searched is very low; on the contrary, if the area is high we have a fine specificity (i.e. only a few words are usually combined with a hashtag with the high area). From an information theory point of view, the first case corresponds to a large entropy (every state is equally probable), the second one to low entropy (few probable states). The results of this evaluation for the hashtag here considered is provided in Tab. \ref{TAB_area}: the RareEarth is associated with the higher value, followed by Afghanistan and Pfizer; on the other side, freedom has low specificity since it can be associated with a cumbersome amount of words. In the author's view, the area can be considered as an assessment of the information content obtained by mining tweets with this word: if a word with a high area (above the support threshold) is used, it is associated almost with specific terms. Thus the tweets retrieved used with this hashtag were will more likely to provide useful information. On the other side, a hashtag connected with a low area will provide many spurious tweets, and thus, in the end, no useful information will be retrieved.
@@ -500,19 +500,19 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
     \subcaption{Delta}
     \vspace{4ex}
 <<<<<<< HEAD
-  \end{minipage} 
+  \end{minipage}
 \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/Matrix_vaccine.jpg} 
-    \subcaption{Vaccine} 
+    \includegraphics[width=.9\linewidth]{Figures/Matrix_vaccine.jpg}
+    \subcaption{Vaccine}
     \vspace{4ex}
-  \end{minipage} 
+  \end{minipage}
 \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/Matrix_pfizer.jpg} 
-    \subcaption{Pfizer} 
+    \includegraphics[width=.9\linewidth]{Figures/Matrix_pfizer.jpg}
+    \subcaption{Pfizer}
     \vspace{4ex}
-  \end{minipage}     
+  \end{minipage}
 \begin{minipage}[b]{0.5\linewidth}
 =======
     \begin{minipage}[b]{0.5\linewidth}
@@ -556,8 +556,8 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
   \end{minipage}%%
     \begin{minipage}[b]{0.5\linewidth}
    \centering
-    \includegraphics[width=.9\linewidth]{Figures/Support_distrubution_Rareearth.png} 
-    \subcaption{Rareearth} 
+    \includegraphics[width=.9\linewidth]{Figures/Support_distrubution_Rareearth.png}
+    \subcaption{Rareearth}
     \vspace{4ex}
   \end{minipage}
   \begin{minipage}[b]{0.5\linewidth}
@@ -566,11 +566,11 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
     \subcaption{Delta}
     \vspace{4ex}
 <<<<<<< HEAD
-  \end{minipage} 
+  \end{minipage}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/Support_distrubution_pfizer.png} 
-    \subcaption{Pfizer} 
+    \includegraphics[width=.9\linewidth]{Figures/Support_distrubution_pfizer.png}
+    \subcaption{Pfizer}
     \vspace{4ex}
 =======
 >>>>>>> 943a6de80e677bd298e72e5d3944d545d3766414
@@ -581,7 +581,7 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
     \subcaption{Pfizer}
     \vspace{4ex}
 <<<<<<< HEAD
-  \end{minipage}%% 
+  \end{minipage}%%
 =======
   \end{minipage}
   \begin{minipage}[b]{0.5\linewidth}
@@ -618,8 +618,8 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
   \end{minipage}%%
    \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/WordCloud_Rareearth.png} 
-    \subcaption{Rareearth} 
+    \includegraphics[width=.9\linewidth]{Figures/WordCloud_Rareearth.png}
+    \subcaption{Rareearth}
     \vspace{4ex}
   \end{minipage}
   \begin{minipage}[b]{0.5\linewidth}
@@ -631,16 +631,16 @@ For each term, we conducted a preliminary analysis on its cleaned document-term 
   \begin{minipage}[b]{0.5\linewidth}
     \centering
 <<<<<<< HEAD
-    \includegraphics[width=.9\linewidth]{Figures/WordCloud_pfizer.png} 
-    \subcaption{Pfizer} 
+    \includegraphics[width=.9\linewidth]{Figures/WordCloud_pfizer.png}
+    \subcaption{Pfizer}
     \vspace{4ex}
-  \end{minipage} 
+  \end{minipage}
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/WordCloud_Vaccine.png} 
-    \subcaption{Vaccines} 
+    \includegraphics[width=.9\linewidth]{Figures/WordCloud_Vaccine.png}
+    \subcaption{Vaccines}
     \vspace{4ex}
-  \end{minipage}%% 
+  \end{minipage}%%
 =======
     \includegraphics[width=.9\linewidth]{Figures/WordCloud_pfizer.png}
     \subcaption{Pfizer}
