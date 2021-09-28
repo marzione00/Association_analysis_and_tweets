@@ -10,7 +10,6 @@
 \contentsline {subsection}{\numberline {2.2.3}{Algorithms}}{13}{subsection.2.2.3}%
 \contentsline {paragraph}{{A priori}}{15}{paragraph*.4}%
 \contentsline {paragraph}{{FP growth}}{16}{paragraph*.6}%
-<<<<<<< HEAD
 \contentsline {subsection}{\numberline {2.2.4}{PCY variant}}{20}{subsection.2.2.4}%
 \contentsline {chapter}{\numberline {3}{Dataset generation}}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}{Tweet retrieval}}{21}{section.3.1}%
@@ -18,11 +17,3 @@
 \contentsline {chapter}{\numberline {4}{Results and discussion}}{23}{chapter.4}%
 \contentsline {chapter}{\numberline {5}{Conclusion}}{32}{chapter.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
-=======
-\contentsline {subsection}{\numberline {2.2.4}{PCY variant}}{18}{subsection.2.2.4}%
-\contentsline {chapter}{\numberline {3}{Dataset generation}}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}{Tweet retrieval}}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}{Choice of the dataset}}{22}{section.3.2}%
-\contentsline {chapter}{\numberline {4}{Results and discussion}}{24}{chapter.4}%
-\contentsline {chapter}{\numberline {5}{Conclusion}}{33}{chapter.5}%
->>>>>>> 943a6de80e677bd298e72e5d3944d545d3766414
