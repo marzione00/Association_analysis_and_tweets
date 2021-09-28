@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.22)  28 SEP 2021 10:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.22)  28 SEP 2021 10:31
 entering extended mode
 **./manuscript.tex
 (manuscript.tex
@@ -2370,9 +2370,9 @@ Overfull \hbox (19.74399pt too wide) in paragraph at lines 434--441
 
 Chapter 3.
 [20 <./Figures/Apriori_memory.png> <./Figures/PCY_memory.png>]
-Overfull \hbox (21.80876pt too wide) in paragraph at lines 455--456
-\T1/pplj/m/n/12 that con-tain re-spec-tively the fol-low-ing hash-tag: \T1/pplj
-/m/it/12 free-dom, Afghanistan,
+Overfull \hbox (26.89676pt too wide) in paragraph at lines 455--456
+\T1/pplj/m/n/12 that con-tain re-spec-tively the fol-low-ing hash-tags: \T1/ppl
+j/m/it/12 free-dom, Afghanistan,
  []
 
 [21
@@ -2807,7 +2807,7 @@ ona/iwonab.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/nowacki/iwona/iwonar.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on manuscript.pdf (35 pages, 1954225 bytes).
+Output written on manuscript.pdf (35 pages, 1954378 bytes).
 PDF statistics:
  569 PDF objects out of 1000 (max. 8388607)
  110 named destinations out of 1000 (max. 500000)
